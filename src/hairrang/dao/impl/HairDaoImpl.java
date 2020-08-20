@@ -1,4 +1,4 @@
-package hairrang.dto.impl;
+package hairrang.dao.impl;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
