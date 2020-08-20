@@ -4,7 +4,7 @@ import java.util.List;
 
 import hairrang.dto.Hairgoods;
 
-public interface Hair {
+public interface HairDao {
 
 	List<Hairgoods> selectHairgoodsByAll();
 
