@@ -2,18 +2,19 @@ package hairrang.dao;
 
 import java.util.List;
 
+import hairrang.dto.Sales;
+
 
 public interface SalesDao {
 
-	List<SalesDao> selectSalesByAll();
+	List<Sales> selectSalesByAll();
 
-	SalesDao selectSalesByNo(SalesDao sales);
+	Sales selectSalesByNo(Sales sales);
 
-	int insertSales(SalesDao sales);
+	int insertSales(Sales sales);
 
-	int updateSales(SalesDao sales);
+	int updateSales(Sales sales);
 
-	int deleteSales(SalesDao sales);
+	int deleteSales(Sales sales);
 
-	SalesDao selectSameSalesEmployeeBySalesNo(SalesDao sales);
 }
