@@ -3,67 +3,86 @@ package hairrang.dto;
 import java.util.Date;
 
 public class Sales {
-	private int salesCode ;
-	private String salesDay;	
-	private String guestName;
-	private String hairName;
-	private String eventName;
-	private int pirce;
+	private int salesNo;
+	private Date salesDay;	
+	private Date salesTime;
+	private Guest guestNo;
+	private Event eventNo;
 	
 	
-	public int getSalesCode() {
-		return salesCode;
+	public Sales() {
 	}
-	public void setSalesCode(int salescode) {
-		this.salesCode = salescode;
+	
+	public Sales(int salesNo) {
+		this.salesNo = salesNo;
 	}
-	public String getSalesDay() {
+
+	public Sales(int salesNo, Date salesDay, Date salesTime, Guest guestNo, Event eventNo) {
+		this.salesNo = salesNo;
+		this.salesDay = salesDay;
+		this.salesTime = salesTime;
+		this.guestNo = guestNo;
+		this.eventNo = eventNo;
+	}
+
+	public int getSalesNo() {
+		return salesNo;
+	}
+
+	public void setSalesNo(int salesNo) {
+		this.salesNo = salesNo;
+	}
+
+	public Date getSalesDay() {
 		return salesDay;
 	}
-	public void setSalesDay(String salesday) {
-		this.salesDay = salesday;
+
+	public void setSalesDay(Date salesDay) {
+		this.salesDay = salesDay;
 	}
-	public String getGuestName() {
-		return guestName;
+
+	public Date getSalesTime() {
+		return salesTime;
 	}
-	public void setGuestName(String guestname) {
-		this.guestName = guestname;
+
+	public void setSalesTime(Date salesTime) {
+		this.salesTime = salesTime;
 	}
-	public String getHairName() {
-		return hairName;
+
+	public Guest getGuestNo() {
+		return guestNo;
 	}
-	public void setHairName(String hairname) {
-		this.hairName = hairname;
+
+	public void setGuestNo(Guest guestNo) {
+		this.guestNo = guestNo;
 	}
-	public String getEventName() {
-		return eventName;
+
+	public Event getEventNo() {
+		return eventNo;
 	}
-	public void setEventName(String eventname) {
-		this.eventName = eventname;
+
+	public void setEventNo(Event eventNo) {
+		this.eventNo = eventNo;
 	}
-	public int getPirce() {
-		return pirce;
-	}
-	public void setPirce(int pirce) {
-		this.pirce = pirce;
-	}
+
 	@Override
 	public String toString() {
-		return "sales [salescode=" + salesCode + ", salesday=" + salesDay + ", guestname=" + guestName + ", hairname="
-				+ hairName + ", eventname=" + eventName + ", pirce=" + pirce + "]";
+		return String.format("Sales [salesNo=%s, salesDay=%s, salesTime=%s, guestNo=%s, eventNo=%s]", salesNo, salesDay,
+				salesTime, guestNo, eventNo);
 	}
-	public Sales(int salescode, String salesday, String guestname, String hairname, String eventname, int pirce) {
-		super();
-		this.salesCode = salescode;
-		this.salesDay = salesday;
-		this.guestName = guestname;
-		this.hairName = hairname;
-		this.eventName = eventname;
-		this.pirce = pirce;
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + salesNo;
+		return result;
 	}
-	
-	
-	
+
+	@Override
+	public boolean equals(Object obj) {
+		return this.salesNo == ((Sales)obj).salesNo;
+	}
 	
 	
 }

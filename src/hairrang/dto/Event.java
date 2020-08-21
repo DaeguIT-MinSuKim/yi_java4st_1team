@@ -1,44 +1,57 @@
 package hairrang.dto;
 
 public class Event {
-	private int eventcode;
-	private String eventname;
-	private double eventsale;
+	private int eventNo;
+	private String eventName;
+	private double sale;
 	
 	public Event() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
-	public int getEventcode() {
-		return eventcode;
+	public int getEventNo() {
+		return eventNo;
 	}
-	public void setEventcode(int eventcode) {
-		this.eventcode = eventcode;
+	public void setEventNo(int eventNo) {
+		this.eventNo = eventNo;
 	}
-	public String getEventname() {
-		return eventname;
+	public String getEventName() {
+		return eventName;
 	}
-	public void setEventname(String eventname) {
-		this.eventname = eventname;
+	public void setEventName(String eventName) {
+		this.eventName = eventName;
 	}
-	public double getEventsale() {
-		return eventsale;
+	public double getSale() {
+		return sale;
 	}
-	public void setEventsale(double eventsale) {
-		this.eventsale = eventsale;
+	public void setSale(double eventSale) {
+		this.sale = eventSale;
 	}
 	
-	public Event(int eventcode, String eventname, double eventsale) {
+	public Event(int eventCode, String eventName, double eventSale) {
 		super();
-		this.eventcode = eventcode;
-		this.eventname = eventname;
-		this.eventsale = eventsale;
+		this.eventNo = eventCode;
+		this.eventName = eventName;
+		this.sale = eventSale;
 	}
 	
 	@Override
 	public String toString() {
-		return "event [eventcode=" + eventcode + ", eventname=" + eventname + ", eventsale=" + eventsale + "]";
+		return "event [eventNo=" + eventNo + ", eventName=" + eventName + ", Sale=" + sale + "]";
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + eventNo;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		return this.eventNo == ((Event)obj).eventNo;
+	}
+	
 	
 }

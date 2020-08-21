@@ -6,16 +6,16 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import hairrang.dto.Customer;
-import hairrang.dto.Hairgoods;
+import hairrang.dto.Hair;
 
 import javax.swing.ListSelectionModel;
 
 public class hairTable extends JTable {
-	private ArrayList<Hairgoods> items;
+	private ArrayList<Hair> items;
 	public hairTable() {
 		initComponents();
 	}
-	public hairTable(ArrayList<Hairgoods> items) {
+	public hairTable(ArrayList<Hair> items) {
 		setItems(items);
 		initComponents();
 	}
@@ -23,7 +23,7 @@ public class hairTable extends JTable {
 		setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		
 	}
-	private void setItems(ArrayList<Hairgoods> items) {
+	private void setItems(ArrayList<Hair> items) {
 		this.items  = items;
 		loadData();
 		
@@ -39,8 +39,8 @@ public class hairTable extends JTable {
 		}
 		return rows;
 	}
-	private Object[] toArray(Hairgoods item) {
-		return new Object[] {item.getHairCode(),item.getHairName(),item.getHairPrice()};
+	private Object[] toArray(Hair item) {
+		return new Object[] {item.getHairNo(),item.getHairName(),item.getPrice()};
 	}
 	private String[] columnNames() {
 		return new String[] {

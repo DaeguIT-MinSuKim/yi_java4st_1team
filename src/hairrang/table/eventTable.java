@@ -41,7 +41,7 @@ public class eventTable extends JTable {
 	}
 	private Object[] toArray(Event item) {
 		Object Stirng;
-		return new Object[] {item.getEventcode(),item.getEventname(),String.format("%.1f", item.getEventsale())};
+		return new Object[] {item.getEventNo(),item.getEventName(),String.format("%.1f", item.getEventSale())};
 	}
 	private String[] columnNames() {
 		return new String[] {

@@ -1,44 +1,48 @@
 package hairrang.dto;
 
+import java.sql.Date;
+
 public class Guest {
-	int guestCode;
-	String guestName;
-	String guestBirthday;
-	String guestJoinday;
-	Boolean guestGender;
-	String guestPhone;
-
+	private int guestNo;
+	private String guestName;
+	private Date birthday;
+	private Date joinDay;
+	private String phone;
+	private int gender;
+	private String guestNote;
+	
 	public Guest() {
+		
 	}
 
-	public Guest(int guestCode) {
-		this.guestCode = guestCode;
-	}
-
-	public Guest(int guestCode, String guestName, String guestBirthday) {
-		this.guestCode = guestCode;
-		this.guestName = guestName;
-		this.guestBirthday = guestBirthday;
-	}
-	
-	
-	public Guest(int guestCode, String guestName, String guestBirthDay, String guestJoinDay, Boolean guestGender,
-			String guestPhone) {
+	public Guest(int guestNo) {
 		super();
-		this.guestCode = guestCode;
+		this.guestNo = guestNo;
+	}
+	
+	public Guest(String guestName) {
+		super();
 		this.guestName = guestName;
-		this.guestBirthday = guestBirthDay;
-		this.guestJoinday = guestJoinDay;
-		this.guestGender = guestGender;
-		this.guestPhone = guestPhone;
 	}
 
-	public int getGuestCode() {
-		return guestCode;
+	public Guest(int guestNo, String guestName, Date birthday, Date joinDay, String phone, int gender,
+			String guestNote) {
+		super();
+		this.guestNo = guestNo;
+		this.guestName = guestName;
+		this.birthday = birthday;
+		this.joinDay = joinDay;
+		this.phone = phone;
+		this.gender = gender;
+		this.guestNote = guestNote;
 	}
 
-	public void setGuestCode(int guestCode) {
-		this.guestCode = guestCode;
+	public int getGuestNo() {
+		return guestNo;
+	}
+
+	public void setGuestNo(int guestNo) {
+		this.guestNo = guestNo;
 	}
 
 	public String getGuestName() {
@@ -49,64 +53,64 @@ public class Guest {
 		this.guestName = guestName;
 	}
 
-	public String getGuestBirthday() {
-		return guestBirthday;
+	public Date getBirthday() {
+		return birthday;
 	}
 
-	public void setGuestBirthday(String guestBirthDay) {
-		this.guestBirthday = guestBirthDay;
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
 	}
 
-	public String getGuestJoinday() {
-		return guestJoinday;
+	public Date getJoinDay() {
+		return joinDay;
 	}
 
-	public void setGuestJoinday(String guestJoinDay) {
-		this.guestJoinday = guestJoinDay;
+	public void setJoinDay(Date joinDay) {
+		this.joinDay = joinDay;
 	}
 
-	public Boolean getGuestGender() {
-		return guestGender;
+	public String getPhone() {
+		return phone;
 	}
 
-	public void setGuestGender(Boolean guestGender) {
-		this.guestGender = guestGender;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
-	public String getGuestPhone() {
-		return guestPhone;
+	public int getGender() {
+		return gender;
 	}
 
-	public void setGuestPhone(String guestPhone) {
-		this.guestPhone = guestPhone;
+	public void setGender(int gender) {
+		this.gender = gender;
+	}
+
+	public String getGuestNote() {
+		return guestNote;
+	}
+
+	public void setGuestNote(String guestNote) {
+		this.guestNote = guestNote;
 	}
 
 	@Override
 	public String toString() {
-		return String.format(
-				"Guest [guestCode=%s, guestName=%s, guestBirthDay=%s, guestJoinDay=%s, guestGender=%s, guestPhone=%s]",
-				guestCode, guestName, guestBirthday, guestJoinday, guestGender, guestPhone);
+		return "Guest [guestNo=" + guestNo + ", guestName=" + guestName + ", birthday=" + birthday + ", joinDay="
+				+ joinDay + ", phone=" + phone + ", gender=" + gender + ", guestNote=" + guestNote + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((guestBirthday == null) ? 0 : guestBirthday.hashCode());
-		result = prime * result + guestCode;
-		result = prime * result + ((guestGender == null) ? 0 : guestGender.hashCode());
-		result = prime * result + ((guestJoinday == null) ? 0 : guestJoinday.hashCode());
-		result = prime * result + ((guestName == null) ? 0 : guestName.hashCode());
-		result = prime * result + ((guestPhone == null) ? 0 : guestPhone.hashCode());
+		result = prime * result + guestNo;
 		return result;
 	}
 
-	// guestCode로 비교하기 ( indexOf등등 응용 가능)
 	@Override
 	public boolean equals(Object obj) {
-		return this.guestCode == ((Guest) obj).guestCode;
+		return this.guestNo == ((Guest) obj).guestNo;
 	}
-	
-	
+
 
 }

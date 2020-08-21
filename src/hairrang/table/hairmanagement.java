@@ -18,7 +18,7 @@ import javax.swing.SwingConstants;
 
 import hairrang.dto.Event;
 import hairrang.dto.Guest;
-import hairrang.dto.Hairgoods;
+import hairrang.dto.Hair;
 import hairrang.dto.Sales;
 
 import java.awt.GridLayout;
@@ -37,7 +37,7 @@ public class hairmanagement extends JPanel {
 	private JLabel lblVisitTime2;
 	private JLabel lblGuestName2;
 	private JLabel lblHairPrice2;
-	private ArrayList<Hairgoods> hairlist = new ArrayList<>();
+	private ArrayList<Hair> hairlist = new ArrayList<>();
 	private ArrayList<Guest> guestlist = new ArrayList<>();
 	private ArrayList<Event> eventlist = new ArrayList<>();
 	private JButton btnGuest;
@@ -57,8 +57,8 @@ public class hairmanagement extends JPanel {
 	public hairmanagement() {
 		Guest g1 = new Guest(1, "홍길동1", "1990-02-20", "2001-05-10", true, "010-1111-1111");
 		Guest g2 = new Guest(2, "홍길동2", "1990-03-30", "2002-06-20", true, "010-2222-2222");
-		Hairgoods h1 = new Hairgoods(1, "커트", 1000);
-		Hairgoods h2 = new Hairgoods(2, "염색", 2000);
+		Hair h1 = new Hair(1, "커트", 1000);
+		Hair h2 = new Hair(2, "염색", 2000);
 		Event e1 = new Event(1, "생일쿠폰", 0.1);
 		Event e2 = new Event(2, "1주년쿠폰", 0.5);
 
@@ -308,10 +308,10 @@ public class hairmanagement extends JPanel {
 		lblGuestCode2.setText(code);
 	}
 
-	private void setHairPanel(Hairgoods hair) {
+	private void setHairPanel(Hair hair) {
 		// 헤어번호, 단가 세팅하기
-		String code = String.valueOf(hair.getHairCode());
-		String price = String.valueOf(hair.getHairPrice());
+		String code = String.valueOf(hair.getHairNo());
+		String price = String.valueOf(hair.getPrice());
 
 		System.out.println(code + "+" + price);
 
@@ -321,8 +321,8 @@ public class hairmanagement extends JPanel {
 
 	private void setEventPanel(Event event) {
 		// 이벤트번호, 이벤트 할인율 셋팅
-		String code = String.valueOf(event.getEventcode());
-		String sale = String.valueOf(String.format("%.1f", event.getEventsale()));
+		String code = String.valueOf(event.getEventNo());
+		String sale = String.valueOf(String.format("%.1f", event.getEventSale()));
 
 		System.out.printf("%d + %f", code, sale);
 
@@ -434,9 +434,9 @@ public class hairmanagement extends JPanel {
 		private void PanelEventSeting(String res) {
 			Event e = new Event();
 			for(Event elist : eventlist) {
-				if(res.equals(elist.getEventname())) {
-					lblEventCode2.setText(String.valueOf(elist.getEventcode()));
-					lblSale2.setText(String.valueOf(elist.getEventsale()));
+				if(res.equals(elist.getEventName())) {
+					lblEventCode2.setText(String.valueOf(elist.getEventNo()));
+					lblSale2.setText(String.valueOf(elist.getEventSale()));
 					
 					
 				}
@@ -445,11 +445,11 @@ public class hairmanagement extends JPanel {
 		}
 
 		private void PanelHairSeting(String res) {
-			Hairgoods h = new Hairgoods();
-			for(Hairgoods hlist : hairlist) {
+			Hair h = new Hair();
+			for(Hair hlist : hairlist) {
 				if(res.equals(hlist.getHairName())) {
-					lblHairCode2.setText(String.valueOf(hlist.getHairCode()));
-					lblHairPrice2.setText(String.valueOf(hlist.getHairPrice()));
+					lblHairCode2.setText(String.valueOf(hlist.getHairNo()));
+					lblHairPrice2.setText(String.valueOf(hlist.getPrice()));
 				}
 			}
 			
@@ -487,7 +487,7 @@ public class hairmanagement extends JPanel {
 
 	}
 
-	private String[] ComboHairArray(ArrayList<Hairgoods> list) {
+	private String[] ComboHairArray(ArrayList<Hair> list) {
 		String[] res = new String[list.size()];
 		for (int i = 0; i < list.size(); i++) {
 			res[i] = list.get(i).getHairName();
@@ -498,7 +498,7 @@ public class hairmanagement extends JPanel {
 	private String[] ComboEventArray(ArrayList<Event> list) {
 		String[] res = new String[list.size()];
 		for (int i = 0; i < list.size(); i++) {
-			res[i] = list.get(i).getEventname();
+			res[i] = list.get(i).getEventName();
 		}
 		return res;
 	}
