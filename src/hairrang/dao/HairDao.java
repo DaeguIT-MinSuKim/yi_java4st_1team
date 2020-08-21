@@ -2,19 +2,20 @@ package hairrang.dao;
 
 import java.util.List;
 
-import hairrang.dto.Hairgoods;
+import hairrang.dto.Hair;
+
 
 public interface HairDao {
 
-	List<Hairgoods> selectHairgoodsByAll();
+	List<Hair> selectHairByAll();
 
-	Hairgoods selectHairgoodsByNo(Hairgoods hair);
+	Hair selectHairByNo(Hair hair);
 
-	int insertHairgoods(Hairgoods hair);
+	int insertHair(Hair hair);
 
-	int updateHairgoods(Hairgoods hair);
+	int updateHair(Hair hair);
 
-	int deleteHairgoods(Hairgoods hair);
+	int deleteHair(Hair hair);
 
-	Hairgoods selectSameHairgoodsEmployeeByHairgoodsNo(Hairgoods hair);
+	
 }
