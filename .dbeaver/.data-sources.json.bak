@@ -59,10 +59,10 @@
 				"handlers": {}
 			}
 		},
-		"oracle_thin-17419dc17bf-38e5f4aa25fe38bc": {
+		"oracle_thin-1741a1b2805-58c9588d49a6f6b5": {
 			"provider": "oracle",
 			"driver": "oracle_thin",
-			"name": "orcl - HAIRRANG(NEW)",
+			"name": "orcl - hair",
 			"save-password": true,
 			"show-system-objects": true,
 			"read-only": false,
