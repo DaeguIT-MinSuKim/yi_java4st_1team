@@ -52,6 +52,13 @@ public class Event {
 	public boolean equals(Object obj) {
 		return this.eventNo == ((Event)obj).eventNo;
 	}
+
+	public Event(int eventNo) {
+		super();
+		this.eventNo = eventNo;
+	}
+	
+	
 	
 	
 }

@@ -26,7 +26,7 @@ public class HairDaoTest {
 		dao=null;
 	}
 
-	//@Test
+	@Test
 	public void testSelectHairByAll() {
 		System.out.printf("%s()%n","testSelectHairByAll()");
 		List<Hair> list =  dao.selectHairByAll();
@@ -62,7 +62,7 @@ public class HairDaoTest {
 		System.out.println(updqtHair);
 	}
 
-	@Test
+	//@Test
 	public void testDeleteHair() {
 		System.out.printf("%s()%n","testDeleteHair()");
 		Hair deleteHair = dao.selectHairByNo(new Hair(2));
