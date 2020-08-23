@@ -1,8 +1,8 @@
 SELECT * FROM dba_users;
 
-CREATE USER HAIRRANG IDENTIFIED BY rootroot;
+CREATE USER hairrang IDENTIFIED BY rootroot;
 
-GRANT CONNECT, RESOURCE, CREATE VIEW TO HAIRRANG;
+GRANT CONNECT, RESOURCE, CREATE VIEW TO hairrang;
 
 SELECT 
    username,
@@ -12,4 +12,12 @@ SELECT
   FROM
      dba_users
  WHERE
-    USERNAME = 'HAIRRANG';
+    USERNAME = 'hairrang';
+    
+   SELECT 
+   username,
+   default_tablespace,
+   profile,
+   authentication_type
+  FROM
+     dba_users;
