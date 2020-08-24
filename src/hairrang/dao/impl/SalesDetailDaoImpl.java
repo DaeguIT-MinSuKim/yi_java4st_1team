@@ -1,6 +1,7 @@
 package hairrang.dao.impl;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,6 +10,8 @@ import java.util.List;
 
 import hairrang.conn.JdbcUtil;
 import hairrang.dao.SalesDetailDao;
+import hairrang.dto.Event;
+import hairrang.dto.Guest;
 import hairrang.dto.Hair;
 import hairrang.dto.Sales;
 import hairrang.dto.SalesDetail;
@@ -24,12 +27,11 @@ public class SalesDetailDaoImpl implements SalesDetailDao {
 
 	@Override
 	public List<SalesDetail> selectSalesDetailByAll() {
-		String sql = "SELECT DETAIL_NO , s.*,h.*,g.*,e.*\r\n" + 
-				"	FROM SALES_DETAIL sd \r\n" + 
-				"		JOIN SALES s ON (sd.SALES_NO = s.SALES_NO ) \r\n" + 
-				"			JOIN HAIR h ON (sd.HAIR_NO = h.HAIR_NO )\r\n" + 
-				"				JOIN GUEST g ON (g.GUEST_NO = s.GUEST_NO )\r\n" + 
-				"					JOIN EVENT e ON (s.EVENT_NO = e.EVENT_NO )";
+		String sql = "SELECT DETAIL_NO , sd.SALES_NO , s.SALES_DAY , s.GUEST_NO ,g.GUEST_NAME  ,h.HAIR_NAME ,h.PRICE  ,e.EVENT_NAME \r\n" + 
+				"	FROM SALES_DETAIL sd JOIN SALES s ON (sd.SALES_NO = s.SALES_NO )\r\n" + 
+				"			JOIN GUEST g ON (g.GUEST_NO = s.GUEST_NO )\r\n" + 
+				"			JOIN HAIR h ON (h.HAIR_NO = sd.HAIR_NO )\r\n" + 
+				"			JOIN EVENT e ON (e.EVENT_NO = s.EVENT_NO )";
 		try(Connection con = JdbcUtil.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql);
 				ResultSet rs= pstmt.executeQuery()){
@@ -74,19 +76,31 @@ public class SalesDetailDaoImpl implements SalesDetailDao {
 	}
 	
 	private SalesDetail getSalesDetail(ResultSet rs) throws SQLException {
+		//int eNo = rs.getInt("EVENT_NO");
+		String eName = rs.getString("EVENT_NAME");
+		Event event = new Event(0, eName, 0);
 		
-		HairDaoImpl hairDao = HairDaoImpl.getInstance();
-		
-		Hair hair = hairDao.getHair(rs);
-		
-		SalesDaoImpl salesDao = SalesDaoImpl.getInstance();
-		
-		Sales sales = salesDao.getSales(rs);
+		//int hNo = rs.getInt("HAIR_NO");
+		String hName =rs.getString("HAIR_NAME");
+		int hPrice = rs.getInt("PRICE");
+		Hair hair = new Hair(0,hName,hPrice);
 		
 		
-		int no = rs.getInt("DETAIL_NO");
-		SalesDetail salesDetail = new SalesDetail(no,sales ,hair);
-		return salesDetail;
+		
+		int gNo = rs.getInt("GUEST_NO");
+		String gName = rs.getString("GUEST_NAME");
+		Guest guset = new Guest(gNo, gName, null, null, null, 0, null);
+		
+		
+		int sNo = rs.getInt("SALES_NO");
+		Date sDay = rs.getDate("SALES_DAY");
+		Sales sales = new Sales(sNo, sDay, null, guset, event);
+		
+		
+		int sdNo = rs.getInt("DETAIL_NO");
+		SalesDetail sd = new SalesDetail(sdNo, sales, hair);
+		
+		return sd;
 	}
 
 

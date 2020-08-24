@@ -16,6 +16,6 @@ public interface HairDao {
 	int updateHair(Hair hair);
 
 	int deleteHair(Hair hair);
-
 	
+	List<String> selectHairByName();
 }

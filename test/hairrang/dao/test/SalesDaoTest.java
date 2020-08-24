@@ -27,7 +27,7 @@ public class SalesDaoTest {
 		dao=null;
 	}
 
-	//@Test
+	@Test
 	public void testSelectSalesByAll() {
 		System.out.printf("%s()%n","testSelectSalesByAll()");
 		List<Sales> list = dao.selectSalesByAll();
@@ -75,7 +75,7 @@ public class SalesDaoTest {
 		
 	}
 
-	@Test
+	//@Test
 	public void testDeleteSales() {
 		System.out.printf("%s()%n","testDeleteSales()");
 		Sales deleteSales = dao.selectSalesByNo(new Sales(4));

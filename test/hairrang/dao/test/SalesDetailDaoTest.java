@@ -26,7 +26,7 @@ public class SalesDetailDaoTest {
 		dao=null;
 	}
 
-	//@Test
+	@Test
 	public void testSelectSalesDetailByAll() {
 		System.out.printf("%s()%n","testSelectSalesDetailByAll()");
 		List<SalesDetail> list = dao.selectSalesDetailByAll();
