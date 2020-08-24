@@ -1,6 +1,6 @@
 package hairrang.dto;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Sales {
 	private int salesNo;
