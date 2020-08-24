@@ -6,21 +6,13 @@ public class Hair {
 	private int price;
 	
 	public Hair() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 	
-	
-	
 	public Hair(int hairNo) {
-		super();
 		this.hairNo = hairNo;
 	}
 
-
-
 	public Hair(int hairNo, String hairName, int hairPrice) {
-		super();
 		this.hairNo = hairNo;
 		this.hairName = hairName;
 		this.price = hairPrice;
