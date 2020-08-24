@@ -21,3 +21,4 @@ SELECT
    authentication_type
   FROM
      dba_users;
+     

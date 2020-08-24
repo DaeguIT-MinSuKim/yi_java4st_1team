@@ -21,6 +21,17 @@ UPDATE SALES
 
 DELETE SALES WHERE SALES_NO =4;
 
+SELECT DETAIL_NO , s.*,h.*,g.*,e.*
+	FROM SALES_DETAIL sd 
+		JOIN SALES s ON (sd.SALES_NO = s.SALES_NO ) 
+			JOIN HAIR h ON (sd.HAIR_NO = h.HAIR_NO )
+				JOIN GUEST g ON (g.GUEST_NO = s.GUEST_NO )
+					JOIN EVENT e ON (s.EVENT_NO = e.EVENT_NO );
+				
+			
+			
+
+
 
 
 

@@ -110,11 +110,12 @@ public class HairDaoImpl implements HairDao{
 
 	}
 	
-	private Hair getHair(ResultSet rs) throws SQLException {
+	public Hair getHair(ResultSet rs) throws SQLException {
 		int no = rs.getInt("HAIR_NO");
 		String name = rs.getString("HAIR_NAME");
 		int price = rs.getInt("PRICE");
-		return new Hair(no, name, price);
+		Hair hair = new Hair(no, name, price);
+		return hair;
 	}
 
 }

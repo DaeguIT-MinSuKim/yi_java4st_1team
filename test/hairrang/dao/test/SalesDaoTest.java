@@ -1,7 +1,5 @@
 package hairrang.dao.test;
 
-import static org.junit.Assert.fail;
-
 import java.util.List;
 
 import org.junit.After;
@@ -21,7 +19,7 @@ public class SalesDaoTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		 dao=SalesDaoImpl.getInstace();
+		 dao=SalesDaoImpl.getInstance();
 	}
 
 	@After
