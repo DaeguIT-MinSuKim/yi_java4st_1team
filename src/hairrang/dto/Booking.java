@@ -1,13 +1,15 @@
 package hairrang.dto;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Booking {
 	
 	private int bookNo;
 	private Guest guestNo;
-	private Date bookDay;
-	private Date bookTime;
+	private Date bookDate;
+	private String bookDateStr;
+	private String bookTimeStr;
 	private Hair hairNo;
 	private String bookNote;
 	
@@ -19,13 +21,52 @@ public class Booking {
 		this.bookNo = bookNo;
 	}
 
-	public Booking(int bookNo, Guest guestNo, Date bookDay, Date bookTime, Hair hairNo, String bookNote) {
+	public Booking(int bookNo, Guest guestNo, Date bookDate, Hair hairNo, String bookNote) {
 		this.bookNo = bookNo;
 		this.guestNo = guestNo;
-		this.bookDay = bookDay;
-		this.bookTime = bookTime;
+		this.bookDate = bookDate;
 		this.hairNo = hairNo;
 		this.bookNote = bookNote;
+		
+		setBookDateStr(bookDate);
+		setBookTimeStr(bookDate);
+	}
+
+	public Date getBookDate() {
+		return bookDate;
+	}
+
+	public void setBookDate(Date bookDate) {
+		this.bookDate = bookDate;
+		setBookDateStr(bookDate);
+		setBookTimeStr(bookDate);
+	}
+
+	public String getBookDateStr() {
+		return bookDateStr;
+	}
+
+	
+	public void setBookDateStr(Date bookDate) {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+		this.bookDateStr = dateFormat.format(bookDate);
+	}
+	
+	public void setBookDateStr(String bookDateStr) {
+		this.bookDateStr = bookDateStr;
+	}
+
+	public String getBookTimeStr() {
+		return bookTimeStr;
+	}
+
+	public void setBookTimeStr(Date bookDate) {
+		SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
+		this.bookTimeStr = timeFormat.format(bookDate);
+	}
+	
+	public void setBookTimeStr(String bookTimeStr) {
+		this.bookTimeStr = bookTimeStr;
 	}
 
 	public int getBookNo() {
@@ -42,22 +83,6 @@ public class Booking {
 
 	public void setGuestNo(Guest guestNo) {
 		this.guestNo = guestNo;
-	}
-
-	public Date getBookDay() {
-		return bookDay;
-	}
-
-	public void setBookDay(Date bookDay) {
-		this.bookDay = bookDay;
-	}
-
-	public Date getBookTime() {
-		return bookTime;
-	}
-
-	public void setBookTime(Date bookTime) {
-		this.bookTime = bookTime;
 	}
 
 	public Hair getHairNo() {
@@ -78,8 +103,8 @@ public class Booking {
 
 	@Override
 	public String toString() {
-		return String.format("Booking [bookNo=%s, guestNo=%s, bookDay=%s, bookTime=%s, hairNo=%s, bookNote=%s]", bookNo,
-				guestNo, bookDay, bookTime, hairNo, bookNote);
+		return String.format("Booking [bookNo=%s, guestNo=%s, bookDate=%s, bookDateStr=%s, bookTimeStr=%s, hairNo=%s, bookNote=%s]", bookNo,
+				guestNo, bookDate, bookDateStr, bookTimeStr, hairNo, bookNote);
 	}
 
 	@Override
