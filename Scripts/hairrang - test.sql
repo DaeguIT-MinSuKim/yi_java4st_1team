@@ -32,7 +32,12 @@ SELECT DETAIL_NO , s.*,h.*,g.*,e.*
 			JOIN HAIR h ON (sd.HAIR_NO = h.HAIR_NO )
 				JOIN GUEST g ON (g.GUEST_NO = s.GUEST_NO )
 					JOIN EVENT e ON (s.EVENT_NO = e.EVENT_NO );
-				
+	
+SELECT * FROM SALES s 
+	JOIN HAIR h ON (s.HAIR_NO = h.HAIR_NO ) 
+	JOIN GUEST g ON (g.GUEST_NO = s.GUEST_NO) 
+	JOIN EVENT e ON (s.EVENT_NO = e.EVENT_NO)
+	WHERE s.GUEST_NO = 2;
 			
 			
 

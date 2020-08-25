@@ -11,9 +11,10 @@ public interface SalesDao {
 
 	// 날짜 조건 필요함
 	// where sales_day between ( and ) 아닐까... 잘 찾아봐
+	Sales selectSalesByDate(Sales sales);
 	
 	// 언니쪽(고객검색)에서 필요한 메서드임 만들어야 해
-	Sales selectSalesByGuestNo(Sales sales);
+	List<Sales> selectSalesByGuestNo(Sales sales);
 
 	int insertSales(Sales sales);
 	
@@ -28,8 +29,9 @@ public interface SalesDao {
 	
 
 	/* 필요없지만 구색 갖춘 메서드 */
-	int updateSales(Sales sales);
-	int deleteSales(Sales sales);
+	/*
+	 * int updateSales(Sales sales); int deleteSales(Sales sales);
+	 */
 	
 
 }

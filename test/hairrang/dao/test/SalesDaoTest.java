@@ -11,6 +11,7 @@ import hairrang.dao.SalesDao;
 import hairrang.dao.impl.SalesDaoImpl;
 import hairrang.dto.Event;
 import hairrang.dto.Guest;
+import hairrang.dto.Hair;
 import hairrang.dto.Sales;
 
 
@@ -27,7 +28,7 @@ public class SalesDaoTest {
 		dao=null;
 	}
 
-	@Test
+	//@Test
 	public void testSelectSalesByAll() {
 		System.out.printf("%s()%n","testSelectSalesByAll()");
 		List<Sales> list = dao.selectSalesByAll();
@@ -36,16 +37,17 @@ public class SalesDaoTest {
 		
 	}
 
+	
 	//@Test
-	public void testSelectSalesByNo() {
-		System.out.printf("%s()%n","testSelectSalesByNo()");
-		Sales selectSales = dao.selectSalesByNo(new Sales(2));
-		Assert.assertNotNull(selectSales);
-		System.out.println(selectSales);
+	public void selectSalesByGuestNo() {
+		System.out.printf("%s()%n","selectSalesByGuestNo()");
+		List<Sales> list = dao.selectSalesByGuestNo(new Sales(2));
+		Assert.assertNotNull(list);
+		list.stream().forEach(System.out::println);
 		
 	}
 
-	//@Test
+	@Test
 	public void testInsertSales() {
 		System.out.printf("%s()%n","testInsertSales()");
 		java.sql.Date d=  java.sql.Date .valueOf("2004-06-22");
@@ -53,7 +55,7 @@ public class SalesDaoTest {
 		java.util.Date utilDate = new java.util.Date();
 	    java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
 		
-		Sales newSales = new Sales(3, d, sqlDate, new Guest(2), new Event(1));
+		Sales newSales = new Sales(5, d,  new Guest(2), new Event(1),new Hair(1));
 		int res = dao.insertSales(newSales);
 		Assert.assertEquals(1, res);
 	}
