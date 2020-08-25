@@ -20,7 +20,7 @@ public class SalesDaoImpl implements SalesDao{
 	
 	private SalesDaoImpl() {};
 	
-	public static SalesDaoImpl getInstace() {
+	public static SalesDaoImpl getInstance() {
 		return instance;
 	}
 
@@ -115,7 +115,7 @@ public class SalesDaoImpl implements SalesDao{
 		
 	}
 	
-	private Sales getSales(ResultSet rs) throws SQLException {
+	public Sales getSales(ResultSet rs) throws SQLException {
 
 		int gno = rs.getInt("GUEST_NO");
 		String gname = rs.getString("GUEST_NAME");

@@ -1,7 +1,5 @@
 package hairrang.dao.test;
 
-import static org.junit.Assert.fail;
-
 import java.util.List;
 
 import org.junit.After;
@@ -21,7 +19,7 @@ public class SalesDaoTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		 dao=SalesDaoImpl.getInstace();
+		 dao=SalesDaoImpl.getInstance();
 	}
 
 	@After
@@ -29,7 +27,7 @@ public class SalesDaoTest {
 		dao=null;
 	}
 
-	//@Test
+	@Test
 	public void testSelectSalesByAll() {
 		System.out.printf("%s()%n","testSelectSalesByAll()");
 		List<Sales> list = dao.selectSalesByAll();
@@ -77,7 +75,7 @@ public class SalesDaoTest {
 		
 	}
 
-	@Test
+	//@Test
 	public void testDeleteSales() {
 		System.out.printf("%s()%n","testDeleteSales()");
 		Sales deleteSales = dao.selectSalesByNo(new Sales(4));

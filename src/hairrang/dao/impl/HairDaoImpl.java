@@ -110,11 +110,35 @@ public class HairDaoImpl implements HairDao{
 
 	}
 	
-	private Hair getHair(ResultSet rs) throws SQLException {
+	@Override
+	public List<String> selectHairByName() {
+		String sql =  "SELECT HAIR_NO ,HAIR_NAME ,PRICE FROM hair";
+		try(Connection con = JdbcUtil.getConnection();
+					PreparedStatement ptst =  con.prepareStatement(sql);
+					ResultSet rs = ptst.executeQuery()){
+				if(rs.next()) {
+						List<String> list = new ArrayList<String>();
+						do {
+							list.add(getHair(rs).getHairName());
+						}while(rs.next());
+						return list;
+					}
+				} catch (SQLException e) {
+					throw new  RuntimeException(e);
+				}
+		
+		return null;
+	}
+	
+	
+	public Hair getHair(ResultSet rs) throws SQLException {
 		int no = rs.getInt("HAIR_NO");
 		String name = rs.getString("HAIR_NAME");
 		int price = rs.getInt("PRICE");
-		return new Hair(no, name, price);
+		Hair hair = new Hair(no, name, price);
+		return hair;
 	}
+
+	
 
 }

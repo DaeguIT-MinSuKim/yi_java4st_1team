@@ -2,4 +2,5 @@
 /.project
 /.settings/
 /bin/
-/.dbeaver/
+/.dbeaver/.project-metadata.json.bak
+/.dbeaver/project-metadata.json

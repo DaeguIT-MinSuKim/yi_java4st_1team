@@ -23,8 +23,22 @@ UPDATE SALES
 
 DELETE SALES WHERE SALES_NO =4;
 
+<<<<<<< HEAD
+SELECT DETAIL_NO , s.*,h.*,g.*,e.*
+	FROM SALES_DETAIL sd 
+		JOIN SALES s ON (sd.SALES_NO = s.SALES_NO ) 
+			JOIN HAIR h ON (sd.HAIR_NO = h.HAIR_NO )
+				JOIN GUEST g ON (g.GUEST_NO = s.GUEST_NO )
+					JOIN EVENT e ON (s.EVENT_NO = e.EVENT_NO );
+				
+			
+			
+
+
+=======
 INSERT INTO guest
 VALUES(1, '이지수', TO_DATE('1994-03-15', 'YYYY-MM-DD'), SYSDATE, '010-7423-3200', 2, NULL);
+>>>>>>> branch 'master' of https://github.com/DaeguIT-MinSuKim/yi_java4st_1team.git
 
 INSERT INTO HAIR
 VALUES(1, '컷트', 10000);

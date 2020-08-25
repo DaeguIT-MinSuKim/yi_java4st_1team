@@ -16,5 +16,6 @@ public interface SalesDao {
 	int updateSales(Sales sales);
 
 	int deleteSales(Sales sales);
+	
 
 }
