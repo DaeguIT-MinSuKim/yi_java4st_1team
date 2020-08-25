@@ -1,6 +1,7 @@
 {
 	"folders": {},
 	"connections": {
+<<<<<<< HEAD
 		"oracle_thin-1740e7eaa2d-57c233a1a5937a07": {
 			"provider": "oracle",
 			"driver": "oracle_thin",
@@ -72,6 +73,79 @@
 				"database": "orcl",
 				"url": "jdbc:oracle:thin:@//localhost:1521/orcl",
 				"home": "D:\\app\\lenovo\\product\\11.2.0\\dbhome_1",
+=======
+		"oracle_thin-1740eb0bec6-534c958eed59b6ed": {
+			"provider": "oracle",
+			"driver": "oracle_thin",
+			"name": "orcl - HAIRRANG",
+			"save-password": true,
+			"show-system-objects": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "1521",
+				"database": "orcl",
+				"url": "jdbc:oracle:thin:@//localhost:1521/orcl",
+				"home": "D:\\app\\lenovo\\product\\11.2.0\\dbhome_1",
+				"type": "dev",
+				"provider-properties": {
+					"@dbeaver-check-schema-content@": "false",
+					"@dbeaver-always-show-dba@": "false",
+					"@dbeaver-always-use-dba-views@": "false",
+					"@dbeaver-meta-use-sys-schema@": "false",
+					"@dbeaver-meta-use-simple-constraints@": "false",
+					"@dbeaver-use-rule-hint@": "false",
+					"@dbeaver-use-meta-optimizer@": "false",
+					"@dbeaver-connection-type@": "BASIC",
+					"@dbeaver-sid-service@": "SERVICE"
+				},
+				"auth-model": "oracle_native",
+				"handlers": {}
+			}
+		},
+		"oracle_thin-17419d62da0-3c2175c2121261f4": {
+			"provider": "oracle",
+			"driver": "oracle_thin",
+			"name": "orcl - system",
+			"save-password": true,
+			"show-system-objects": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "1521",
+				"database": "orcl",
+				"url": "jdbc:oracle:thin:@//localhost:1521/orcl",
+				"home": "C:\\Users\\kdh01\\product\\11.2.0\\dbhome_1",
+				"type": "dev",
+				"provider-properties": {
+					"@dbeaver-check-schema-content@": "false",
+					"@dbeaver-always-show-dba@": "false",
+					"@dbeaver-always-use-dba-views@": "false",
+					"@dbeaver-meta-use-sys-schema@": "false",
+					"@dbeaver-meta-use-simple-constraints@": "false",
+					"@dbeaver-use-rule-hint@": "false",
+					"@dbeaver-use-meta-optimizer@": "false",
+					"@dbeaver-connection-type@": "BASIC",
+					"@dbeaver-sid-service@": "SERVICE"
+				},
+				"auth-model": "oracle_native",
+				"handlers": {}
+			}
+		},
+		"oracle_thin-1741a1b2805-58c9588d49a6f6b5": {
+			"provider": "oracle",
+			"driver": "oracle_thin",
+			"name": "orcl - hair",
+			"save-password": true,
+			"show-system-objects": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "1521",
+				"database": "orcl",
+				"url": "jdbc:oracle:thin:@//localhost:1521/orcl",
+				"home": "C:\\Users\\kdh01\\product\\11.2.0\\dbhome_1",
+>>>>>>> branch 'master' of https://github.com/DaeguIT-MinSuKim/yi_java4st_1team.git
 				"type": "dev",
 				"provider-properties": {
 					"@dbeaver-check-schema-content@": "false",

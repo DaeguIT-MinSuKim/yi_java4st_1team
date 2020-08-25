@@ -11,26 +11,22 @@ public class Guest {
 	private int gender;
 	private String guestNote;
 	
-	
-
 	public Guest() {
 		
 	}
 
 	public Guest(int guestNo) {
-		super();
 		this.guestNo = guestNo;
 	}
 	
-	
 	public Guest(String guestName) {
-		super();
 		this.guestName = guestName;
 	}
 
+	// return new Guest(guestNo, guestName, birthday, joinDay, phone, gender, guestNote);
+	
 	public Guest(int guestNo, String guestName, Date birthday, Date joinDay, String phone, int gender,
 			String guestNote) {
-		super();
 		this.guestNo = guestNo;
 		this.guestName = guestName;
 		this.birthday = birthday;

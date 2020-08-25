@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tm:TermDictionary xmlns:tm="http://exerd.com/term-model" version="1.1">
+  <term name="고객" physicalName="guest"/>
+  <term name="이벤트" physicalName="event"/>
+  <term name="헤어" physicalName="hair"/>
+  <term name="영업" physicalName="sales">
+    <synonyms>방문</synonyms>
+  </term>
+  <term name="번호" physicalName="no"/>
+  <term name="명" physicalName="name">
+    <synonyms>이름</synonyms>
+  </term>
+  <term name="단가" physicalName="price">
+    <synonyms>가격</synonyms>
+  </term>
+  <term name="일자" physicalName="day"/>
+  <term name="생년월일" physicalName="birthday"/>
+  <term name="가입" physicalName="join"/>
+  <term name="시간" physicalName="time">
+    <synonyms>시</synonyms>
+    <synonyms>시각</synonyms>
+  </term>
+  <term name="성별" physicalName="gender"/>
+  <term name="전화번호" physicalName="phone"/>
+  <term name="할인율" physicalName="rate">
+    <synonyms>율</synonyms>
+    <synonyms>비율</synonyms>
+  </term>
+  <term name="예약" physicalName="book">
+    <synonyms>예정</synonyms>
+  </term>
+  <term name="비고" physicalName="note"/>
+</tm:TermDictionary>

@@ -6,8 +6,10 @@
 	<classpathentry kind="src" path="resource"/>
 	<classpathentry kind="src" path="test"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
-	<classpathentry kind="lib" path="jcalendar-1.4.jar"/>
-	<classpathentry kind="lib" path="lib/ojdbc8-19.7.0.0.jar"/>
-	<classpathentry kind="lib" path="D:/Hairrang_ing/lib/orai18n.jar"/>
+	<classpathentry kind="lib" path="D:/teamproject_workspace/Hairrang_git/lib/jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="D:/teamproject_workspace/Hairrang_git/lib/jcommon-1.0.23.jar"/>
+	<classpathentry kind="lib" path="D:/teamproject_workspace/Hairrang_git/lib/jfreechart-1.0.19.jar"/>
+	<classpathentry kind="lib" path="D:/teamproject_workspace/Hairrang_git/lib/ojdbc8-19.7.0.0.jar"/>
+	<classpathentry kind="lib" path="D:/teamproject_workspace/Hairrang_git/lib/orai18n.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
