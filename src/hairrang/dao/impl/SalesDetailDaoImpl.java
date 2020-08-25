@@ -25,6 +25,13 @@ public class SalesDetailDaoImpl implements SalesDetailDao {
 		return instance;
 	}
 
+	
+	/* 쓸모 없어졌삼 빠이... 세일즈디테일바이얼 알아서 이사가세욤 
+	 * 컬럼 전체로 셀렉트 해줘서 스윙 쪽에서 잘 지지고 볶아서 원하는 컬럼만 JTable화 하기 
+	 * Sales 객체에서 List<Hair> 가지고 있기. (찐 DB 테이블에서는 다른 영업번호로 Hair 기록하면 됨)
+	 * */
+	
+	
 	@Override
 	public List<SalesDetail> selectSalesDetailByAll() {
 		String sql = "SELECT DETAIL_NO , sd.SALES_NO , s.SALES_DAY , s.GUEST_NO ,g.GUEST_NAME  ,h.HAIR_NAME ,h.PRICE  ,e.EVENT_NAME \r\n" + 
